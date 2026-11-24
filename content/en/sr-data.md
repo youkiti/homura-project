@@ -38,9 +38,9 @@ Each review is bought only once. If several co-authors apply for the same review
 
 1. Protocol
 2. Search strategies for all databases, with search dates and hit counts (all rounds if the search was updated)
-3. Title and abstract screening decisions (individual and consensus decisions, or consensus only)
-4. Full-text screening decisions (same as above)
-5. Data extraction and risk of bias assessments (same as above)
+3. Title and abstract screening decisions: each reviewer's individual decisions and the consensus decisions. Consensus decisions alone are accepted only when the individual decisions no longer exist
+4. Full-text screening decisions (same as above). If the final decisions are not kept in the screening tool, the study lists in the published review can be used instead
+5. Data extraction and risk of bias assessments (same as above). Do not include text copied from the published review
 
 Files should be CSV or Excel. Remove abstracts, controlled vocabulary (MeSH, Emtree), and reviewer names (replace them with codes such as A and B). We do not accept RIS files, abstracts, or article PDFs.
 

@@ -6,7 +6,7 @@ HOMURA（Human-Overseen Models for Unified Review Automation）の概要と、SR
 
 ## ローカルでのビルド
 
-Node.js 22を使用します。
+Node.js 22.23.4 以上の22系を使用します（Astro 7 の要件。CI は 22.23.5）。
 
 ```sh
 npm ci
