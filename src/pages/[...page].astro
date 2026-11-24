@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  const documents = import.meta.glob('../../content/**/*.md', { eager: true });
+  const routes = [
+    [undefined, 'ja/index'],
+    ['sr-data', 'ja/sr-data'],
+    ['sr-data/faq', 'ja/sr-data-faq'],
+    ['sr-data/contract/2026-11-10', 'ja/contract-2026-11-10'],
+    ['en', 'en/index'],
+    ['en/sr-data', 'en/sr-data'],
+  ];
+
+  return routes.map(([page, source]) => ({
+    params: { page },
+    props: { document: documents[`../../content/${source}.md`], route: page ?? '' },
+  }));
+}
+
+const { document, route } = Astro.props;
+const { Content, frontmatter } = document;
+const lang = frontmatter.lang ?? 'ja';
+const title = frontmatter.title ?? 'SRデータ提供契約書';
+---
+
+<Layout title={title} lang={lang} route={route}>
+  <Content />
+</Layout>

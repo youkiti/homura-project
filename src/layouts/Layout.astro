@@ -1,0 +1,51 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import '../styles/site.css';
+
+const { title, lang, route } = Astro.props;
+const english = lang === 'en';
+const home = getRelativeLocaleUrl(lang);
+const call = getRelativeLocaleUrl(lang, 'sr-data');
+const pairedPath = route === '' || route === 'en' ? '' : 'sr-data';
+const hasPair = ['', 'en', 'sr-data', 'en/sr-data'].includes(route);
+const jaUrl = getRelativeLocaleUrl('ja', pairedPath);
+const enUrl = getRelativeLocaleUrl('en', pairedPath);
+const absolute = (path) => new URL(path, Astro.site).href;
+const description = english
+  ? 'HOMURA develops open-source tools to support systematic reviews with human oversight. Learn about the project and the call for SR data.'
+  : 'HOMURAは、人による確認を重視したシステマティックレビュー支援ツールを開発するプロジェクトです。研究の概要とSRデータの公募をご案内します。';
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | HOMURA</title>
+    <meta name="description" content={description} />
+    {hasPair && <>
+      <link rel="alternate" hreflang="ja" href={absolute(jaUrl)} />
+      <link rel="alternate" hreflang="en" href={absolute(enUrl)} />
+    </>}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{english ? 'Skip to content' : '本文へ移動'}</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href={home}>HOMURA</a>
+        <nav aria-label={english ? 'Main navigation' : 'メインナビゲーション'}>
+          <a href={home} aria-current={route === '' || route === 'en' ? 'page' : undefined}>{english ? 'Home' : 'トップ'}</a>
+          <a href={call} aria-current={route === 'sr-data' || route === 'en/sr-data' ? 'page' : undefined}>{english ? 'Call for SR data' : 'SRデータの公募'}</a>
+        </nav>
+        <a class="language-switch" href={english ? jaUrl : enUrl} lang={english ? 'ja' : 'en'} hreflang={english ? 'ja' : 'en'}>{english ? '日本語' : 'English'}</a>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <article><slot /></article>
+    </main>
+    <footer class="site-footer">
+      <span>© 2026 HOMURA project</span>
+      <a href="https://github.com/youkiti/homura-project">GitHub</a>
+    </footer>
+  </body>
+</html>

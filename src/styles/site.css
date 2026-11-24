@@ -1,0 +1,50 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #202b35;
+  background: #fff;
+  line-height: 1.85;
+  font-size: 16px;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #155575; text-underline-offset: 0.2em; }
+a:hover { color: #9a341d; }
+a:focus-visible, table:focus-visible { outline: 3px solid #bb4a2a; outline-offset: 4px; }
+.site-header { border-top: 5px solid #ad3e25; border-bottom: 1px solid #d8dfe4; }
+.header-inner {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+.brand { color: #922f1b; font-size: 1.6rem; font-weight: 800; letter-spacing: 0.08em; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+nav a[aria-current="page"] { font-weight: 700; text-decoration-thickness: 2px; }
+.language-switch { margin-inline-start: auto; }
+main { max-width: 52rem; margin: 3rem auto 4rem; padding-inline: 1.5rem; overflow-wrap: anywhere; }
+h1, h2, h3 { line-height: 1.5; color: #182e3c; }
+h1 { font-size: clamp(1.65rem, 4vw, 2.2rem); margin: 0 0 1.5rem; }
+h2 { font-size: 1.4rem; margin: 2.75rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid #d8dfe4; }
+h3 { font-size: 1.15rem; margin-top: 2rem; }
+p, ul, ol { margin-block: 1rem; }
+ul, ol { padding-inline-start: 1.6rem; }
+li + li { margin-top: 0.5rem; }
+hr { border: 0; border-top: 1px solid #d8dfe4; margin-block: 2.5rem; }
+.call-status { background: #fff2e8; border: 1px solid #d69374; border-inline-start: 5px solid #ad3e25; padding: 1rem 1.25rem; font-weight: 700; font-size: 1.1rem; }
+table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin-block: 1.5rem; font-size: 0.95rem; }
+th, td { border: 1px solid #cbd5dd; padding: 0.7rem 0.9rem; text-align: start; vertical-align: top; min-width: 7rem; }
+th { background: #edf2f6; font-weight: 700; }
+td:last-child { min-width: 17rem; }
+.site-footer { max-width: 72rem; margin-inline: auto; padding: 1.5rem; border-top: 1px solid #d8dfe4; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-size: 0.9rem; }
+.skip-link { position: absolute; inset-inline-start: 1rem; top: -6rem; background: #fff; padding: 0.6rem 1rem; z-index: 1; }
+.skip-link:focus { top: 0.5rem; }
+@media (max-width: 36rem) {
+  .header-inner { gap: 0.75rem 1rem; }
+  nav { order: 3; width: 100%; }
+  main { margin-top: 2rem; }
+}
