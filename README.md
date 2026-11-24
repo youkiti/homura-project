@@ -1,6 +1,6 @@
 # HOMURA プロジェクトのウェブサイト
 
-HOMURA（Human-Overseen Models for Unified Review Automation）の概要と、SRデータの公募を案内する静的Astroサイトです。日本語はルート、英語は `/en/` に配置します。
+HOMURA（Human-Overseen Models for Unified Review Automation）の概要と、SRデータの募集を案内する静的Astroサイトです。日本語はルート、英語は `/en/` に配置します。
 
 公開URL: https://youkiti.github.io/homura-project/
 

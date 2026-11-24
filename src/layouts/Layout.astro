@@ -13,7 +13,7 @@ const enUrl = getRelativeLocaleUrl('en', pairedPath);
 const absolute = (path) => new URL(path, Astro.site).href;
 const description = english
   ? 'HOMURA develops open-source tools to support systematic reviews with human oversight. Learn about the project and the call for SR data.'
-  : 'HOMURAは、人による確認を重視したシステマティックレビュー支援ツールを開発するプロジェクトです。研究の概要とSRデータの公募をご案内します。';
+  : 'HOMURAは、人による確認を重視したシステマティックレビュー支援ツールを開発するプロジェクトです。研究の概要とSRデータの募集をご案内します。';
 ---
 
 <!doctype html>
@@ -35,7 +35,7 @@ const description = english
         <a class="brand" href={home}>HOMURA</a>
         <nav aria-label={english ? 'Main navigation' : 'メインナビゲーション'}>
           <a href={home} aria-current={route === '' || route === 'en' ? 'page' : undefined}>{english ? 'Home' : 'トップ'}</a>
-          <a href={call} aria-current={route === 'sr-data' || route === 'en/sr-data' ? 'page' : undefined}>{english ? 'Call for SR data' : 'SRデータの公募'}</a>
+          <a href={call} aria-current={route === 'sr-data' || route === 'en/sr-data' ? 'page' : undefined}>{english ? 'Call for SR data' : 'SRデータの募集'}</a>
         </nav>
         <a class="language-switch" href={english ? jaUrl : enUrl} lang={english ? 'ja' : 'en'} hreflang={english ? 'ja' : 'en'}>{english ? '日本語' : 'English'}</a>
       </div>
