@@ -1,9 +1,9 @@
 ---
-title: HOMURA Project
+title: HOMURA project
 lang: en
 ---
 
-# HOMURA
+# HOMURA project
 
 Human-Overseen Models for Unified Review Automation
 
