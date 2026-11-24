@@ -21,7 +21,7 @@ const description = english
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} | HOMURA</title>
+    <title>{title === 'HOMURA project' ? title : `${title} | HOMURA project`}</title>
     <meta name="description" content={description} />
     {hasPair && <>
       <link rel="alternate" hreflang="ja" href={absolute(jaUrl)} />
@@ -32,7 +32,7 @@ const description = english
     <a class="skip-link" href="#main">{english ? 'Skip to content' : '本文へ移動'}</a>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href={home}>HOMURA</a>
+        <a class="brand" href={home}>HOMURA project</a>
         <nav aria-label={english ? 'Main navigation' : 'メインナビゲーション'}>
           <a href={home} aria-current={route === '' || route === 'en' ? 'page' : undefined}>{english ? 'Home' : 'トップ'}</a>
           <a href={call} aria-current={route === 'sr-data' || route === 'en/sr-data' ? 'page' : undefined}>{english ? 'Call for SR data' : 'SRデータの募集'}</a>
